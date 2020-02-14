@@ -20,21 +20,24 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('mwelcome');
-		$data['nama']="BELAJAR";
-		$data['nilai']=$this->mwelcome->get();
-		$data['luas_pp']=$this->mwelcome->luas(7,5);
-		$this->load->view('luaspp',$data);
-	}
-	public function hitung_luas(){
-		$this->load->model('mwelcome');
-		$data['nama']="BELAJAR";
-		$data['nilai']=$this->mwelcome->get();
+	 	$this->load->model('mwelcome');
+	 	$data['nama']="BELAJAR";
+	 	$data['nilai']=$this->mwelcome->get();
+	 	$data['luas_pp']=$this->mwelcome->luas(7,5);
+	 	$this->load->view('luaspp',$data);
+	 }
+	 public function hitung_luas(){
+	 	$this->load->model('mwelcome');
+	 	$data['nama']="BELAJAR";
+	 	$data['nilai']=$this->mwelcome->get();
 
-		$this->load->model('mwelcome');
-		$panjang=$this->input->post('panjang');
-		$lebar=$this->input->post('lebar');
-		$data['luas_pp'] = $this->mwelcome->luas($panjang,$lebar);
-		$this->load->view('welcome_message',$data);
-		}
+	 	$this->load->model('mwelcome');
+	 	$panjang=$this->input->post('panjang');
+	 	$lebar=$this->input->post('lebar');
+	 	$data['luas_pp'] = $this->mwelcome->luas($panjang,$lebar);
+	 	$this->load->view('welcome_message',$data);
+	 	}
+	//	$this->load->helper('typography');
+	//	$string = auto_typography('/awe.html');
+	//	$this->load->view('/awe.html');
 }
